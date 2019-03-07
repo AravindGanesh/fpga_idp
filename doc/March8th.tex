@@ -33,14 +33,16 @@
 	\begin{itemize}
 		\item[•] {Load image into FPGA
 			\begin{itemize}
-				\item[•] (write about spi interface and ffmpeg)
+				\item[•] Convert image to hex file using \textit{ffmpeg}
+				\item[•] Stream these pixel values as bytes from Raspberry Pi to FPGA RAM using \textit{ffmpeg}
+				\item[•] Use coordinate decoder module on sequence of pixels (bytes). For this we need to specify the image size. Later we plan to extend to use pilot bytes to detect row endings. 
 			\end{itemize}
 		}
 		\pause
 		\item[•] { To Implement an efficient Sobel Filter on FPGA
 			\begin{itemize}
 				\item[•] (write about sobel filter implementation in verilog)
-			\end{itemize}					
+			\end{itemize}
 		}
 	\end{itemize}
 
