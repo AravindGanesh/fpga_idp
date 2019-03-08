@@ -3,12 +3,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{enumitem}
+\usepackage{enumerate}
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-%\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\graphicspath{ {./images/} }
 \usepackage{array}
 \author{Aravind and Jeel}
 \title{IDP - EE3025}
@@ -26,8 +34,8 @@
 \end{frame}
 
 \begin{frame}{Project Idea: \\ Edge Detection on Images}
-	%\framesubtitle{Edge Detection on Images}
-	\textsf{Sobel Filter is used to detect two kinds of edges in an image} \\
+
+	Sobel Filter is used to detect two kinds of edges in an image \\
 	\begin{itemize}
 	\item[•] Vertical Direction
 	\item[•] Horizontal Direction
@@ -38,7 +46,6 @@
 \end{frame}
 
 \begin{frame}{Edge Detection on Images}
-	%\framesubtitle{Edge Detection on Images}
 	
 	\textbf{Vertical Mask}
 	\begin{center}
@@ -93,24 +100,27 @@
 	\begin{itemize}
 		\item[•] {Load image into FPGA
 			\begin{itemize}
-				\item[•] Convert image to hex file using \textit{ffmpeg}
-				\item[•] Stream these pixel values as bytes from Raspberry Pi to FPGA RAM using \textit{ffmpeg}
-				\item[•] Use coordinate decoder module on sequence of pixels (bytes). For this we need to specify the image size. Later we plan to extend to use pilot bytes to detect row endings. 
+				\item[\rightarrow] Convert image to hex file using \textit{ffmpeg}
+				\item[\rightarrow] Stream these pixel values as bytes from Raspberry Pi to FPGA RAM using \textit{ffmpeg}
+				\item[\rightarrow] Write a coordinate decoder module on sequence of pixels (bytes). For this we need to specify the image size. We plan to use pilot bytes to detect row endings in later stages of the project. 
 			\end{itemize}
 		}
 		\pause
 		\item[•] { To Implement an efficient Sobel Filter on FPGA
 			\begin{itemize}
-				\item[•] (write about sobel filter implementation in verilog)
+				\item[\rightarrow] Efficient Convolution algorithm of an image of known shape with a known constant filter 
 			\end{itemize}
 		}
 	\end{itemize}
 
 \end{frame}
 
-\begin{frame}{Loading Image into FPGA using Raspberry Pi}
-write about SPI interface \\
-maybe about expected progress by next presentation
+\begin{frame}{References}
+\begin{itemize}
+\item \href{https://github.com/jhol/otl-icoboard-pmodoledrgb-demo}{https://github.com/jhol/otl-icoboard-pmodoledrgb-demo}
+\item \href{https://en.wikipedia.org/wiki/Sobel_operator}{\text{https://en.wikipedia.org/wiki/Sobel\_operator}}
+\end{itemize}
+
 \end{frame}
 
 \end{document}
