@@ -8,6 +8,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+%\graphicspath{ {./images/} }
+\usepackage{array}
 \author{Aravind and Jeel}
 \title{IDP - EE3025}
 \setbeamercovered{transparent}
@@ -23,10 +25,68 @@
 \titlepage
 \end{frame}
 
-\begin{frame}{Project Idea}
-	\textsf{Sobel Filter For Edge Detection on Images}
+\begin{frame}{Project Idea: \\ Edge Detection on Images}
+	%\framesubtitle{Edge Detection on Images}
+	\textsf{Sobel Filter is used to detect two kinds of edges in an image} \\
+	\begin{itemize}
+	\item[•] Vertical Direction
+	\item[•] Horizontal Direction
+	\end{itemize}
+	
 	% write about sobel filter
 	% math equations
+\end{frame}
+
+\begin{frame}{Edge Detection on Images}
+	%\framesubtitle{Edge Detection on Images}
+	
+	\textbf{Vertical Mask}
+	\begin{center}
+	
+	\begin{tabular}{|m{1cm}|m{1cm}|m{1cm}|}
+	\hline
+	-1 & 0 & 1 \\
+	\hline
+	-2 & 0 & 2 \\
+	\hline
+	-1 & 0 & 1 \\
+	\hline
+	
+	\end{tabular}
+	\end{center}
+	\pause
+	\textbf{Horizontal Mask}
+	\begin{center}
+	
+	\begin{tabular}{|m{1cm}|m{1cm}|m{1cm}|}
+	\hline
+	-1 & -2 & -1 \\
+	\hline
+	0 & 0 & 0 \\
+	\hline
+	1 & 2 & 1 \\
+	\hline
+	
+	\end{tabular}
+	\end{center}
+	
+	% write about sobel filter
+	% math equations
+\end{frame}
+
+\begin{frame}
+\textbf{Sample image}
+\includegraphics{sobel1}
+\end{frame}
+
+\begin{frame}
+\textbf{After applying vertical mask}
+\includegraphics{sobel2}
+\end{frame}
+
+\begin{frame}
+\textbf{After applying horizontal mask}
+\includegraphics{sobel3}
 \end{frame}
 
 \begin{frame}{Implementation Plan}
