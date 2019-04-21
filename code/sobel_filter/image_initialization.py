@@ -30,7 +30,7 @@ for i in range(0,28):
         #print('5\'d'+'im[i+'+str(i)+'][j+'+str(j)+'],')
         
 xstr = xstr[:-1]
-xstr += '}'
+xstr += '};'
 # print(xstr)
 
 
@@ -50,34 +50,4 @@ def replace_in_file(filename, key, new_value):
 
 replace_in_file("tb_sobel.v", 'A', xstr)
 
-
-# In[47]:
-
-
-# file = open('test.v','w')
-# file.close()
-
-
-# In[ ]:
-
-
-xstr += '{'
-for i in range(0,28):
-    for j in range(0,28):
-        xstr +='\''
-        xstr += '5'
-        xstr += '\\'
-        xstr += '\'d'
-        xstr += '\''
-        xstr += '+'
-        xstr += 'str(im[i+'
-        xstr += str(i)
-        xstr += '][j+'
-        xstr += str(j)
-        xstr += ']),'
-        #print('5\'d'+'im[i+'+str(i)+'][j+'+str(j)+'],')
-        
-xstr = xstr[:-1]
-xstr += '};'
-print(xstr)
 
