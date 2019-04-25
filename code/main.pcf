@@ -1,5 +1,0 @@
-set_io clk_100mhz R9
-
-set_io rpi_sck H11
-set_io rpi_cs D4
-set_io rpi_mosi A6
