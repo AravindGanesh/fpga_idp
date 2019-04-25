@@ -27,5 +27,5 @@ void loop(){
     }Serial.println(digit);
   }
   digit=0;
-  delay(250);
+  delay(200);
 }

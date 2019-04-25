@@ -13,7 +13,7 @@ from PIL import Image
 
 im = Image.open('img_137.jpg')
 im = np.array(im)
-im = im%32
+im = im//8
 # print(im)
 
 
@@ -42,12 +42,12 @@ def replace_in_file(filename, key, new_value):
     lines = f.readlines()
     f.close()
     for i, line in enumerate(lines):
-        if line.split('=')[0].strip(' \n') == key:
-            lines[i] = key + ' = ' + new_value + '\n'
+        if line.split('<=')[0].strip(' \n') == key:
+            lines[i] = key + ' <= ' + new_value + '\n'
     f = open(filename, "w")
     f.write("".join(lines))
     f.close()
 
-replace_in_file("tb_sobel.v", 'A', xstr)
+replace_in_file("helloworld.v", 'A', xstr)
 
 
