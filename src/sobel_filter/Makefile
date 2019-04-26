@@ -1,4 +1,4 @@
-.PHONY: default
+.PHONY: default initialize prog_sram
 default: intialize prog_sram 
 
 $(v_fname).blif: $(v_fname).v conv.v

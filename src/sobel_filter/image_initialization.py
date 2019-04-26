@@ -9,7 +9,7 @@ from PIL import Image
 
 
 im = Image.open('img_137.jpg')
-im = np.array(im)
+im = np.array(im)//8
 im = im
 # print(im)
 

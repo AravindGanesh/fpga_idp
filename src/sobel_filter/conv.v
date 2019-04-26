@@ -3,17 +3,18 @@
 module conv(A,B,Res);
     
     //input and output ports.
-    //input clk;
-    //The size 6272 bits which is 28*28=784 elements,each of which is 8 bits wide.    
-    input [6271:0] A;
-    //The size 72 bits which is 3*3=9 elements,each of which is 8 bits wide.
-    input [71:0] B;
+
+    //The size 3920 bits which is 28*28=784 elements,each of which is 5 bits wide.    
+    input [3919:0] A;
+    //The size 27 bits which is 3*3=9 elements,each of which is 3 bits wide.
+    input [26:0] B;
     //The size 5408 bits which is 26*26=676 elements,each of which is 8 bits wide.
     output [5407:0] Res;
+
     //internal variables 
     reg [5407:0] Res;
-    reg [7:0] A1 [0:27][0:27];
-    reg [7:0] B1 [0:2][0:2];
+    reg [4:0] A1 [0:27][0:27];
+    reg signed [2:0] B1 [0:2][0:2];
     reg [7:0] Res1 [0:25][0:25]; 
     integer i,j;
 
@@ -32,7 +33,7 @@ module conv(A,B,Res);
         //Convolution
         for(i=0;i < 26;i=i+1) begin
             for(j=0;j < 26;j=j+1) begin
-                Res1[i][j] = A1[i][j] * B1[0][0] + A1[i+1][j] * B1[1][0] + A1[i+2][j] * B1[2][0] + A1[i][j+1] * B1[0][1] + A1[i+1][j+1] * B1[1][1] + A1[i+2][j+1] * B1[2][1] + A1[i][j+2] * B1[0][2] + A1[i+1][j+2] * B1[1][2] + A1[i+2][j+2] * B1[2][2];//  - 8'd127;
+                Res1[i][j] = A1[i][j] * B1[0][0] + A1[i+1][j] * B1[1][0] + A1[i+2][j] * B1[2][0] + A1[i][j+1] * B1[0][1] + A1[i+1][j+1] * B1[1][1] + A1[i+2][j+1] * B1[2][1] + A1[i][j+2] * B1[0][2] + A1[i+1][j+2] * B1[1][2] + A1[i+2][j+2] * B1[2][2]  - 8'd127;
             end
         end
 
