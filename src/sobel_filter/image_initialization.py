@@ -45,6 +45,6 @@ def replace_in_file(filename, key, new_value):
     f.write("".join(lines))
     f.close()
 
-replace_in_file("helloworld.v", 'A', xstr)
+replace_in_file("sobel_uart.v", 'A', xstr)
 
 
