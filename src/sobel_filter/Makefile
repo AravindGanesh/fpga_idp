@@ -1,5 +1,5 @@
-.PHONY: default initialize prog_sram
-default: intialize prog_sram 
+.PHONY: default initialize 
+default:  prog_sram 
 
 $(v_fname).blif: $(v_fname).v conv.v
 	yosys -p 'synth_ice40 -blif $(v_fname).blif' $(v_fname).v conv.v
@@ -14,8 +14,11 @@ $(v_fname).bin: $(v_fname).asc
 prog_sram: $(v_fname).bin
 	icoprog -p < $(v_fname).bin
 
-intialize:
+initialize:
 	python image_initialization.py
 
 receive:
 	python receive_img.py
+
+clean:
+	rm -r *.asc *.blif *.bin
